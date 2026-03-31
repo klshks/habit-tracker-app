@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit app</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" 
+        rel="stylesheet"
+        >
+    <link rel="icon" href="/logo/logo-habit.svg">
+</head>
+<body>
+    <div class="app">
+        <div class="panel">
+            <img src="/logo/logo-habit.svg" alt="logo habit app" class="panel-logo">
+            <nav class="panel-menu">
+                <div class="panel-menu__list">
+                    <button class="panel-menu__list-item">
+                        <img src="images/icon-fitness.svg" alt="">
+                    </button>
+                    <button class="panel-menu__list-item">
+                        <img src="/images/icon-water.svg" alt="water">
+                    </button>
+                    <button class="panel-menu__list-item">
+                        <img src="images/icon-food.svg" alt="food">
+                    </button>
+                </div>
+                <button class="panel-menu__add">
+                    <img src="/images/icon-add.svg" alt="add">
+                </button>
+            </nav>
+        </div>
+        <div class="content">
+            <header>
+                <h1>Віджимання</h1>
+                <div class="progress">
+                    <div class="progress-text">
+                        <div class="progress-text__name">Прогрес</div>
+                        <div class="progress-text__percent">0%</div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-bar__cover"></div>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <div>
+                    <div class="habit">
+                        <div class="habit-day">День 1</div>
+                        <div class="habit-comment">Перший крок завжди найважчий.</div>
+                        <button class="habit-delete">
+                            <img src="images/icon-delete.svg" alt="delete day">
+                        </button>
+                    </div>
+                </div>
+                <div class="habit">
+                    <div class="habit-day">День 2</div>
+                    <form class="habit-form">
+                        <input class="habit-form__input" type="text" placeholder="Коментар:">
+                        <img class="habit-form__icon" src="images/icon-comment.svg" alt="icon comment">
+                        <button class="habit-form__button">
+                            Готово
+                        </button>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="/scripts/app.js"></script>
+</body>
+</html>
