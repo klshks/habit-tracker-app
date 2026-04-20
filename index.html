@@ -17,28 +17,20 @@
             <img src="/logo/logo-habit.svg" alt="logo habit app" class="panel-logo">
             <nav class="panel-menu">
                 <div class="panel-menu__list">
-                    <button class="panel-menu__list-item">
-                        <img src="images/icon-fitness.svg" alt="">
-                    </button>
-                    <button class="panel-menu__list-item">
-                        <img src="/images/icon-water.svg" alt="water">
-                    </button>
-                    <button class="panel-menu__list-item">
-                        <img src="images/icon-food.svg" alt="food">
-                    </button>
+                    
                 </div>
                 <button class="panel-menu__add">
-                    <img src="/images/icon-add.svg" alt="add">
+                    <img src="/images/icon-add.svg" alt="add" onclick="togglePopup()">
                 </button>
             </nav>
         </div>
         <div class="content">
             <header>
-                <h1>Віджимання</h1>
+                <h1 class="h1">-</h1>
                 <div class="progress">
                     <div class="progress-text">
                         <div class="progress-text__name">Прогрес</div>
-                        <div class="progress-text__percent">0%</div>
+                        <div class="progress-text__percent">%</div>
                     </div>
                     <div class="progress-bar">
                         <div class="progress-bar__cover"></div>
@@ -46,26 +38,50 @@
                 </div>
             </header>
             <main>
-                <div>
-                    <div class="habit">
-                        <div class="habit-day">День 1</div>
-                        <div class="habit-comment">Перший крок завжди найважчий.</div>
-                        <button class="habit-delete">
-                            <img src="images/icon-delete.svg" alt="delete day">
-                        </button>
-                    </div>
-                </div>
+                <div id="days"></div>
                 <div class="habit">
-                    <div class="habit-day">День 2</div>
-                    <form class="habit-form">
-                        <input class="habit-form__input" type="text" placeholder="Коментар:">
+                    <div class="habit-day">День _</div>
+                    <form class="habit-form" onsubmit="addDays(event)">
+                        <input name="comment" class="habit-form__input" type="text" placeholder="Коментар:">
                         <img class="habit-form__icon" src="images/icon-comment.svg" alt="icon comment">
-                        <button class="habit-form__button">
+                        <button class="habit-form__button" type="submit">
                             Готово
                         </button>
                     </form>
                 </div>
             </main>
+        </div>
+        <div class="cover" id="add-habit-popup">
+            <div class="popup">
+                <h2>Нова звичка</h2>
+                <div class="icon-label">Іконка</div>
+                <div class="icon-select">
+                    <button class="icon icon-active" onclick="setIcon(this, 'fitness')">
+                        <img src="images/icon-fitness.svg" alt="Фітнес">
+                    </button>
+                    <button class="icon" onclick="setIcon(this, 'water')">
+                        <img src="images/icon-water.svg" alt="Напої">
+                    </button>
+                    <button class="icon" onclick="setIcon(this, 'food')">
+                        <img src="images/icon-food.svg" alt="Їжа">
+                    </button>
+                </div>
+                <form class="popup-form" onsubmit="addHabit(event)">
+                    <input 
+                        type="text" 
+                        name="icon" 
+                        placeholder="Іконка" 
+                        hidden
+                        value="fitness"
+                    >
+                    <input type="text" name="name" placeholder="Назва">
+                    <input type="number" name="target" placeholder="Ціль">
+                    <button class="popup-form__button" type="submit">Добавити</button>
+                </form>
+                <button class="popup-close">
+                    <img src="images/close.svg" alt="Закрити вікно" onclick="togglePopup()">
+                </button>
+            </div>
         </div>
     </div>
 
